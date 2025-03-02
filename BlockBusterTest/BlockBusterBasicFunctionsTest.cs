@@ -31,5 +31,19 @@ namespace BlockBusterTest
             var result = BlockBuster.BlockBusterBasicFunctions.GetAllCheckedOutMovies();
             Assert.True(result.Count == 3);
         }
+
+        [Fact]
+        public void GetAllMoviesByGenreDescription()
+        {
+            var result = BlockBuster.BlockBusterBasicFunctions.GetAllMoviesByGenreDescription("Drama");
+            Assert.True(result.Count >= 10);
+        }
+
+        [Fact]
+        public void GetAllMoviesByDirectorLastName()
+        {
+            var result = BlockBuster.BlockBusterBasicFunctions.GetAllMoviesByDirectorLastName("Coppola");
+            Assert.True(result.Count == 2);
+        }
     }
 }

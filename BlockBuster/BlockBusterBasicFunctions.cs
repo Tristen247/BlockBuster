@@ -54,6 +54,31 @@ namespace BlockBuster
             }
         }
 
+        public static List<FullMovieListGenre> GetAllMoviesByGenreDescription(string genreDescr)
+        {
+            using (var db = new Se407BlockBusterContext())
+            {
+                if (string.IsNullOrWhiteSpace(genreDescr))
+                    return new List<FullMovieListGenre>(); // Return an empty list if input is invalid.
+
+                return db.FullMovieListGenres
+                    .Where(m => m.GenreDescr.ToLower() == genreDescr.ToLower())
+                    .ToList();
+            }
+        }
+
+        public static List<FullMovieListGenre> GetAllMoviesByDirectorLastName(string lastName)
+        {
+            using (var db = new Se407BlockBusterContext())
+            {
+                if (string.IsNullOrWhiteSpace(lastName))
+                    return new List<FullMovieListGenre>(); // Return an empty list if input is invalid.
+                return db.FullMovieListGenres
+                    .Where(m => m.LastName.ToLower() == lastName.ToLower())
+                    .ToList();
+            }
+        }
+
 
 
     }
