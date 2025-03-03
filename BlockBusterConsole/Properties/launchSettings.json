@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "BlockBusterConsole": {
+      "commandName": "Project",
+      "commandLineArgs": "CSV GetMovieByTitle Vertigo"
+    }
+  }
+}
